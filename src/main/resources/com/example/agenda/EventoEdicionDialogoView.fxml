@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.agenda.EventoEdicionDialogoController">
+   <children>
+      <Button fx:id="btnGuardar" layoutX="92.0" layoutY="296.0" mnemonicParsing="false" onAction="#guardarEvento" text="Guardar" />
+      <Button fx:id="btnSalir" layoutX="92.0" layoutY="334.0" mnemonicParsing="false" onAction="#salirEvento" prefHeight="26.0" prefWidth="62.0" text="Salir" />
+      <TextField fx:id="txtTipo" layoutX="39.0" layoutY="57.0" />
+      <TextField fx:id="txtNombre" layoutX="43.0" layoutY="126.0" />
+      <TextField fx:id="txtEvento" layoutX="43.0" layoutY="200.0" />
+      <Label layoutX="39.0" layoutY="22.0" text="Tipo" />
+      <Label layoutX="39.0" layoutY="97.0" text="Nombre" />
+      <Label layoutX="39.0" layoutY="173.0" text="Fecha Evento" />
+   </children>
+</AnchorPane>
