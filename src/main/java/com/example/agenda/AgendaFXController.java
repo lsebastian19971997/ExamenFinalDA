@@ -78,7 +78,8 @@ public class AgendaFXController implements Initializable {
         tblContactos.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue1) -> showContactoDetails((Contacto) newValue1));
 
-
+        tblEventos.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue2) -> showEventoDetails((Evento) newValue2));
 
     }
 
@@ -107,6 +108,32 @@ public class AgendaFXController implements Initializable {
             eventos = contactoActual.getEventos();
             tblEventos.setItems(eventos);
             tblEventos.refresh();
+        }
+
+    }
+
+    private void showEventoDetails(Evento evento)
+    {
+        this.eventoActual = evento;
+        if (evento != null) {
+            // Fill the labels with info from the contactoDTO object.
+            lblNombreEvento.setText(this.eventoActual.getNombreEvento());
+            lblTipoEvento.setText(this.eventoActual.getTipoEvento());
+            lblFechaEvento.setText(this.eventoActual.getFechaEvento());
+
+        } else {
+            // ContactoDTO is null, remove all the text.
+            lblNombre.setText("");
+            lblApellidos.setText("");
+            lblTelefono.setText("");
+            lblEmail.setText("");
+        }
+
+        if(eventoActual.getRecordatorio()!=null){
+            recordatorios = null;
+            recordatorios.add(eventoActual.getRecordatorio());
+            tblRecordatorios.setItems(recordatorios);
+            tblRecordatorios.refresh();
         }
 
     }
